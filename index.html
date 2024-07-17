@@ -4,10 +4,160 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fetch API Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>haha</h1>
-    <section id="recipe-board"></section>
+    <section class="container">
+      <div class="top-menu">
+        <input type="text" id="user-input" />
+        <button id="search-button">Search</button>
+      </div>
+      <section id="recipe-board">
+        <div class="main1">슬라이드</div>
+        <div class="main2">룰렛</div>
+        <div class="main3">
+          <!-- 영양별 식단 이미지 -->
+          <div id="diet-img"></div>
+          <div class="checkbox-board">
+            <!-- 칼로리 -->
+            <div class="nutrition-box">
+              <h4>칼로리</h4>
+              <div>
+                <input type="checkbox" id="calories-50" name="INFO_ENG" />
+                <div>~50</div>
+              </div>
+              <div>
+                <input type="checkbox" id="calories-100" name="INFO_ENG" />
+                <div>~100</div>
+              </div>
+              <div>
+                <input type="checkbox" id="calories-150" name="INFO_ENG" />
+                <div>~150</div>
+              </div>
+              <div>
+                <input type="checkbox" id="calories-200" name="INFO_ENG" />
+                <div>~200</div>
+              </div>
+            </div>
+
+            <!-- 탄수화물 -->
+
+            <!-- <div class="nutrition-box">
+              <h4>탄수화물</h4>
+              <div>
+                <input type="checkbox" id="car-50" name="INFO_CAR" />
+                <div>~5</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_CAR" />
+                <div>~10</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_CAR" />
+                <div>~15</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_CAR" />
+                <div>~20</div>
+              </div>
+            </div> -->
+
+            <!-- 단백질 -->
+
+            <!-- <div class="nutrition-box">
+              <h4>단백질</h4>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_PRO" />
+                <div>~5</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_PRO" />
+                <div>~10</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_PRO" />
+                <div>~15</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_PRO" />
+                <div>~20</div>
+              </div>
+            </div> -->
+
+            <!-- 지방 -->
+
+            <!-- <div class="nutrition-box">
+              <h4>지방</h4>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_FAT" />
+                <div>~5</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_FAT" />
+                <div>~10</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_FAT" />
+                <div>~15</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_FAT" />
+                <div>~20</div>
+              </div>
+            </div> -->
+
+            <!-- 나트륨 -->
+
+            <!-- <div class="nutrition-box">
+              <h4>나트륨</h4>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_NA" />
+                <div>~5</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_NA" />
+                <div>~10</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_NA" />
+                <div>~15</div>
+              </div>
+              <div>
+                <input type="checkbox" id="scales" name="INFO_NA" />
+                <div>~20</div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- <div class="row show-recipe">
+          <div class="col-lg-4">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Recipe Image"
+              class="food-img"
+            />
+          </div>
+          <div class="col-lg-8">
+            <h2>음식명</h2>
+            <p>재료</p>
+            ${manualHTML}
+          </div>
+        </div> -->
+      </section>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js"></script>
   </body>
 </html>

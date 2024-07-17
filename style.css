@@ -1,0 +1,33 @@
+.food-img {
+  width: 300px;
+  height: 300px;
+}
+.show-recipe {
+  border-bottom: 1px solid red;
+  margin: 10px 0px;
+}
+
+.main3 {
+  border: 1px solid red;
+  height: 250px;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.nutrition-box > div {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.nutrition-box input {
+  margin: 0.4rem;
+}
+.nutrition-box h4 {
+  padding-right: 3rem;
+}
+.nutrition-box {
+  display: flex; /* Flexbox 레이아웃 사용 */
+  flex-wrap: wrap;
+  margin: 7px;
+}
