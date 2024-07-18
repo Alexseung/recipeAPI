@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+a:hover {
+  cursor: pointer;
+}
+.head-line {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+.head-line-title {
+  font-size: 70px;
+  font-family: 'Oswald', sans-serif;
+}
+.head-line-title:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.head-line svg {
+  width: 480px;
+}
+.top-board {
+  position: sticky;
+  top: 0px;
+  background: #fff;
+}
+.top-nav {
+  display: flex;
+  margin-top: 1em;
+}
+.top-menu i {
+  margin: 0 5px;
+}
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.search-area {
+  display: none;
+}
+.search:hover {
+  cursor: pointer;
+}
+.search-box {
+  border: 1px solid #676767;
+  outline: none;
+  border-radius: 5px;
+}
+.search-button {
+  border: 1px solid #676767;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.search-button:hover {
+  background: rgb(143, 225, 143);
+}
+
+/*사이드바*/
+.inner-menu ul li {
+  list-style: none;
+  margin: 10px 10px;
+}
+.inner-menu ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.inner-menu ul li a:hover {
+  color: rgb(143, 225, 143);
+}
+#news-board {
+  padding: 10px;
+}
+.menus {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 4px double black;
+}
+.menus button {
+  border: none;
+  background: none;
+  margin: 5px;
+}
+
+.menus button:hover {
+  background: rgb(143, 225, 143);
+}
+
+.news-img-size {
+  max-width: 100%;
+  max-height: 250px;
+}
+
+.news {
+  border-bottom: 2px solid black;
+}
+.description {
+  text-overflow: ellipsis;
+}
+
+.clicked {
+  font-weight: 600;
+}
+.keyword-highlite {
+  background: rgb(143, 225, 143);
+}
+
+.hide {
+  display: none;
+}
+
+.bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dark-mode {
+  display: flex;
+  justify-content: flex-end;
+}
+.dark-light {
+  color: #fff;
+  background: #000;
+}
+
+@media screen and (max-width: 625px) {
+  .menus {
+    display: none;
+  }
+  .mobile-menu {
+    display: inline;
+  }
+  .top-nav {
+    position: sticky;
+    top: 0px;
+    background: #fff;
+  }
+}

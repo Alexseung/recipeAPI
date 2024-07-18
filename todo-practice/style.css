@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Sunflower:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+* {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+body {
+  margin: 0;
+  /* background: url(images/background-sky.avif); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.header {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 시계 */
+.clock {
+  width: 350px;
+  height: 70px;
+  background: rgba(235, 0, 255, 0.11);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+}
+
+.clock span {
+  font-size: 40px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.clock span::after {
+  font-size: 16px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+}
+#hrs::after {
+  content: 'HOURS';
+}
+#min::after {
+  content: 'MINS';
+}
+#sec::after {
+  content: 'SEC';
+}
+
+h1 {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 60px;
+}
+.container {
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-image: url(images/background-sky.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.input-area {
+  margin-bottom: 10px;
+}
+#task-input {
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 20px;
+  padding: 7px 7px;
+}
+#add-button {
+  width: 30px;
+  margin-left: 6px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+#task-board {
+  border: none;
+}
+
+.task-area {
+  border: none;
+}
+.task-tabs {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid black;
+}
+
+.task-tabs a {
+  padding: 1em;
+}
+
+#uderlinie {
+  height: 6px;
+  position: absolute;
+  background: blue;
+  width: 60px;
+  left: 0px;
+  top: 51px;
+  padding: 0;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 5px 0;
+  border-bottom: 1px dashed #676767;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.task-done {
+  background: lightgray;
+}
+
+i {
+  padding-left: 15px;
+  font-size: 20px;
+}
+i:hover {
+  cursor: pointer;
+  color: rgb(242, 112, 112);
+}
+
+.pinned-task {
+  background: #faffaf;
+  font-weight: 600;
+}
+
+.showDueDate {
+  display: none;
+  margin: 0;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+  .input-area {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: block;
+    text-align: center;
+  }
+  .clock {
+    width: 100%;
+    text-align: center;
+  }
+}

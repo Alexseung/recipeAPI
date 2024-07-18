@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  background-image: url('images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+.task-area {
+  border: 1px solid #676767;
+}
+.task-tabs {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #676767;
+}
+
+.task-tabs a {
+  padding: 1em;
+}
+
+#underline {
+  height: 5px;
+  background: blue;
+  position: absolute;
+  width: 60px;
+  left: 4px;
+  top: 50px;
+  padding: 0px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
